@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
     div_top: {
         position: 'absolute',
-        top: 60,
+        top: 30,
         left: 0,
         right: 0,
         justifyContent: 'center',
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 25,
-        backgroundColor: '#A2A8AC',
+        backgroundColor: '#FFF',
     },
     cardsContainer: {
         flexDirection: 'row',
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
         opacity: 0.5,
     },
     round: {
-        color: '#FFF',
+        color: '#000',
         fontSize: 48,
         fontFamily: "Chicle",
         marginLeft: 20, 

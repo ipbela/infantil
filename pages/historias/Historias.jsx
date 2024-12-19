@@ -30,7 +30,9 @@ export default function Historias() {
 
                 <View style={styles.btn}>
                     <Text style={styles.btn_text}>A Aventura de Bella</Text>
-                    <Image source={hist1} style={styles.imghist1}/>
+                    <Pressable style={styles.btnHist} onPress={() => navigation.navigate("Pag1Hist1")}>
+                        <Image source={hist1} style={styles.imghist1} />
+                    </Pressable>
                 </View>
             </LinearGradient>
         </View>

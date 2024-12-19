@@ -21,7 +21,7 @@ export default function Inicial() {
                         <Image source={dente} style={styles.logo}></Image>
                     </View>
 
-                    <View style={styles.opcoes}>
+                    <View style={styles.opcoes} className=''>
                         <Pressable style={styles.btn_opcao} onPress={() => navigation.navigate("Cantigas")}>
                             <Image source={music}></Image>
                             <Text style={styles.btn_text}>Cantigas</Text>

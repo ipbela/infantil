@@ -28,6 +28,7 @@ export default function JogoMemoria() {
     const previousIndex = useRef(-1);
     const [round, setRound] = useState(1); // Controle da rodada
     const [completed, setCompleted] = useState(false); // Verifica se todas as cartas foram viradas
+    const [loadingNextRound, setLoadingNextRound] = useState(false);
 
     const matchCheck = (currentCard) => {
         if (cards[currentCard].id === cards[previousCardState].id) {
@@ -68,25 +69,24 @@ export default function JogoMemoria() {
     const nextLevel = () => {
         if (completed) {
             if (round < 3) {
-                setCompleted(false);
-                setRound(round + 1);
-
-                // Navega para a página de "Próxima Rodada"
-                navigation.navigate("ProximaRodada", {round: round + 1});
-
+                const nextRound = round + 1;
+    
+                setLoadingNextRound(true);
                 setTimeout(() => {
-                    setRound(round + 1);
+                    setRound(nextRound);
                     setCards(initialCards());
-                    navigation.navigate("JogoMemoria");
-                }, 3000); // Espera 3 segundos antes de ir para a próxima rodada
+                    setCompleted(false);
+                    setLoadingNextRound(false);
+                }, 1000); // Delay para preparar o próximo nível
             } else {
                 Alert.alert("Parabéns!", "Você completou todas as rodadas!");
-                navigation.navigate("Jogo")
+                navigation.navigate("Jogo");
             }
         } else {
             Alert.alert("Atenção", "Você precisa virar todas as cartas antes de avançar!");
         }
     };
+    
 
     return (
         <View style={styles.container}>
@@ -112,7 +112,7 @@ export default function JogoMemoria() {
                     }}
                     onPress={nextLevel}
                 >
-                    <Text style={{ textAlign: 'center', color: completed ? '#000' : '#FFF' , fontFamily: "Chicle", fontSize: 30}}>
+                    <Text style={{ textAlign: 'center', color: completed ? '#000' : '#000' , fontFamily: "Chicle", fontSize: 30}}>
                         {completed ? 'Próximo Nível' : 'Complete a Rodada'}
                     </Text>
                 </Pressable>

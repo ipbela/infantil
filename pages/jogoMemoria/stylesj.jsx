@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
     },
     div_top: {
         position: 'absolute',  
-        top: 60,  
+        top: 30,  
         left: 20, 
-        backgroundColor: '#A2A8AC',
+        backgroundColor: '#FFF',
         width: 50, 
         height: 50, 
         borderRadius: 50,

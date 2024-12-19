@@ -22,15 +22,15 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
     },
     div_top: {
-        position: 'absolute',  
-        top: 60,  
-        left: 20, 
-        backgroundColor: '#A2A8AC',
-        width: 50, 
-        height: 50, 
+        position: 'absolute',
+        top: 20,
+        left: 20,
+        backgroundColor: '#FFF',
+        width: 50,
+        height: 50,
         borderRadius: 50,
-        justifyContent: 'center', 
-        alignItems: 'center', 
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     back: {
         display: 'flex',
@@ -65,8 +65,16 @@ const styles = StyleSheet.create({
         marginTop: "-20%"
     },
     imghist1: {
-        marginTop: '20%',
-        width: '80%'
+        width: '100%', // Adapte ao tamanho do Pressable
+        height: '100%',
+        resizeMode: 'contain', // Garante que a imagem fique proporcional
+        top: 20
+    },
+    btnHist: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '80%', // Ajuste conforme necessário
+        height: 200,  // Altura suficiente para exibir a imagem
     }
 });
 

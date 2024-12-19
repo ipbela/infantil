@@ -58,7 +58,7 @@ const Animacao = () => {
   });
 
   return (
-    <ImageBackground source={bgColor} style={styles.container}>
+    <ImageBackground source={bgColor} style={styles.container} className=''>
       {showBox && (
         <Animated.View
           style={[
