@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     },
     div_top: {
         position: 'absolute',
-        top: 20,
+        top: 30,
         left: 20,
         backgroundColor: '#FFF',
         width: 50,
@@ -33,49 +33,44 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     back: {
-        display: 'flex',
-        alignContent: 'center',
         justifyContent: 'center',
+        alignItems: 'center',
     },
     titleContainer: {
         position: 'absolute',
+        top: '10%', // Ajusta a posição do título
     },
     title: {
         fontFamily: "Chicle",
         color: "#fff",
         fontSize: 70,
         textAlign: 'center',
-        marginTop: '-170%',
-        left: '10%'
     },
     btn: {
-        flexDirection: 'row', // Faz as caixas ficarem lado a lado
-        flexWrap: 'wrap', // Permite que as caixas quebrem para a próxima linha
-        justifyContent: 'center', // Centraliza as caixas no eixo horizontal
-        alignItems: 'center', // Alinha as caixas no eixo vertical
+        flexDirection: 'column', // Coloca os botões na vertical
+        justifyContent: 'center',
+        alignItems: 'center',
         position: 'absolute',
-        width: '90%', // Defina a largura total da grade
-        height: '40%', // Ajuste a altura da grade conforme necessário
+        width: '90%', // Largura dos botões
     },
     btn_text: {
         color: '#FFF',
         fontSize: 35,
         fontFamily: "Chicle",
         textAlign: 'center',
-        marginTop: "-20%"
+        marginBottom: 20, // Espaço entre o texto e o botão
+    },
+    btnHist: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '80%', // Ajusta conforme necessário
+        height: 200,  // Altura suficiente para exibir a imagem
     },
     imghist1: {
         width: '100%', // Adapte ao tamanho do Pressable
         height: '100%',
         resizeMode: 'contain', // Garante que a imagem fique proporcional
-        top: 20
     },
-    btnHist: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '80%', // Ajuste conforme necessário
-        height: 200,  // Altura suficiente para exibir a imagem
-    }
 });
 
 export default styles;

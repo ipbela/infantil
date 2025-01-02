@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     },
     div_top: {
         position: 'absolute',  
-        top: 30,  
+        top: 40,  
         left: 20, 
         backgroundColor: '#FFF',
         width: 50, 

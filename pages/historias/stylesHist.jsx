@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     },
     div_top: {
         position: 'absolute',
-        top: 40,
+        top: 50,
         left: 20,
         backgroundColor: '#FFF',
         width: 50,
@@ -124,13 +124,12 @@ const styles = StyleSheet.create({
     },
     video: {
         width: '90%', // O vídeo ocupa 90% da largura da tela
-        height: 300, // Altura ajustada para um tamanho maior
+        height: 250, // Altura ajustada para um tamanho maior
         borderRadius: 15, // Borda arredondada para suavizar o container
         overflow: 'hidden', // Garante que o vídeo não ultrapasse as bordas
         alignItems: 'center', // Centraliza o conteúdo no eixo horizontal
         justifyContent: 'center', // Centraliza no eixo vertical
         marginVertical: 20, // Adiciona margem para separar dos elementos acima e abaixo
-        marginTop: '-10%'
     },
     contText: {
         width: '85%',
@@ -139,7 +138,6 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         paddingVertical: 30,
         paddingHorizontal: 20,
-        marginTop: '-8%',
         opacity: 0.6
     },
     bodyText: {

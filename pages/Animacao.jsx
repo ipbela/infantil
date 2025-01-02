@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Animated, Image, StyleSheet, ImageBackground } from 'react-native';
+import { Animated, Image, StyleSheet, ImageBackground, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Animacao = () => {
   const [showImage, setShowImage] = useState(false); // Estado para controlar a exibição da imagem
   const [showBox, setShowBox] = useState(true); // Estado para controlar a exibição do quadrado
-  const [bgColor, setBgColor] = useState(require('../assets/bgloading.png')); // Estado para controlar a cor do fundo
+  const [bgColor, setBgColor] = useState(require('../assets/bgloading.png')); // Fundo inicial
   const rotation = useRef(new Animated.Value(0)).current; // Para rotação
   const scale = useRef(new Animated.Value(1)).current; // Para escala (aproximar e afastar)
 
   const navigation = useNavigation(); // Para navegação
+  const { width, height } = Dimensions.get('window'); // Obter dimensões da tela
 
   useEffect(() => {
     // Animação de rotação circular e de escala
@@ -24,16 +25,16 @@ const Animacao = () => {
         // Animação de escala (aproximar e afastar)
         Animated.sequence([
           Animated.timing(scale, {
-            toValue: 1.5, // Aumenta a escala (aproxima)
+            toValue: 1.2, // Aumenta a escala (aproxima)
             duration: 1500,
             useNativeDriver: true,
           }),
           Animated.timing(scale, {
-            toValue: 0, // Diminui a escala (afasta)
+            toValue: 1, // Volta ao tamanho original
             duration: 1500,
             useNativeDriver: true,
           }),
-        ]), 
+        ]),
       ])
     ).start();
 
@@ -58,7 +59,7 @@ const Animacao = () => {
   });
 
   return (
-    <ImageBackground source={bgColor} style={styles.container} className=''>
+    <ImageBackground source={bgColor} style={styles.container}>
       {showBox && (
         <Animated.View
           style={[
@@ -87,15 +88,23 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'white', // Fundo padrão para evitar discrepâncias
+    width: '100%',
+    height: '100%'
   },
   box: {
-    width: 100,
-    height: 100,
+    width: Dimensions.get('window').width * 0.2, // 20% da largura da tela
+    height: Dimensions.get('window').width * 0.2, // Quadrado proporcional à largura
     backgroundColor: 'white', // Quadrado branco
+    shadowColor: '#000', // Sombra para destaque
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 5, // Sombra no Android
   },
   image: {
-    width: '100%',  // Largura 100% para preencher a tela
-    height: '100%', // Altura 100% para preencher a tela
+    width: Dimensions.get('window').width, // Ocupa 100% da largura da tela
+    height: Dimensions.get('window').height, // Ocupa 100% da altura da tela
     resizeMode: 'cover', // Ajusta a imagem para cobrir a tela sem distorcer
   },
 });

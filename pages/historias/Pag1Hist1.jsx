@@ -53,7 +53,7 @@ export default function Pag1Hist1() {
                     rate={1.0}
                     volume={1.0}
                     isMuted={false}
-                    resizeMode="contain"
+                    resizeMode="cover"
                     shouldPlay
                     useNativeControls
                     style={styles.video}

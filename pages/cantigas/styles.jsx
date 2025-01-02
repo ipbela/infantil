@@ -1,139 +1,93 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        backgroundColor: '#6E8FE1',
     },
     gradientBackground: {
         flex: 1,
         width: '100%',
         height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
     },
     imageBackground: {
         flex: 1,
         width: '100%',
         height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
         resizeMode: 'cover',
     },
+    scrollViewContainer: {
+        flexGrow: 1,
+        justifyContent: 'flex-start',
+        paddingBottom: 20,
+    },
     div_top: {
-        position: 'absolute',  
-        top: 20,  
-        left: 20, 
-        backgroundColor: '#FFF',
-        width: 50, 
-        height: 50, 
-        borderRadius: 50,
-        justifyContent: 'center', 
-        alignItems: 'center', 
-    },
-    back: {
-        display: 'flex',
-        alignContent: 'center',
-        justifyContent: 'center',
-    },
-    titleContainer: {
         position: 'absolute',
+        top: height * 0.05,
+        left: width * 0.05,
+        backgroundColor: '#FFF',
+        width: width * 0.12,
+        height: width * 0.12,
+        borderRadius: width * 0.06,
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 1,
+    },
+    iconBack: {
+        width: width * 0.05,
+        height: height * 0.05,
+        resizeMode: 'contain',
     },
     title: {
         fontFamily: "Chicle",
         color: "#fff",
-        fontSize: 70,
+        fontSize: width * 0.1,
         textAlign: 'center',
-        marginTop: '-175%',
+        marginTop: height * 0.2,
     },
-    boxs: {
-        flexDirection: 'row', // Faz as caixas ficarem lado a lado
-        flexWrap: 'wrap', // Permite que as caixas quebrem para a próxima linha
-        justifyContent: 'center', // Centraliza as caixas no eixo horizontal
-        alignItems: 'center', // Alinha as caixas no eixo vertical
-        position: 'absolute',
-        width: '90%', // Defina a largura total da grade
-        height: '40%', // Ajuste a altura da grade conforme necessário
+    boxes: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        marginTop: height * 0.02,
+        width: '100%',
     },
     box: {
-        width: '60%', // Cada caixa ocupa 60% da largura
-        height: '60%', // Cada caixa ocupa 60% da altura disponível
-    },
-    imageBox1: {
-        width: '110%',
-        height: '110%',
-        marginLeft: '-42%'
-    },
-    imageBox2: {
-        width: '110%',
-        height: '110%',
-        marginLeft: '30%',
-        marginTop: '-93%'
-    },
-    imageBox3: {
-        width: '110%',
-        height: '110%',
-        marginLeft: '-42%',
-        marginTop: '-85%'
-    },
-    imageBox4: {
-        width: '110%',
-        height: '110%',
-        marginLeft: '30%',
-        marginTop: '-180%'
-    },
-    contCantiga1: {
-        flex: 1, 
-        backgroundColor: '#6E8FE1', 
-        justifyContent: 'center', 
+        width: width * 0.45,
+        height: width * 0.45,
+        marginBottom: width * 0.05,
+        justifyContent: 'center',
         alignItems: 'center',
     },
-    titleCantiga: {
+    imageBox: {
+        width: '100%',
+        height: '100%',
+        resizeMode: 'contain',
     },
-    subCantiga: {
+    titleCantiga: {
         fontFamily: "Chicle",
         color: "#fff",
-        fontSize: 60,
+        fontSize: width * 0.09,
         textAlign: 'center',
-    },
-    star1: {
-        position: 'absolute',
-    },
-    star2: {
-        position: 'absolute',
-        marginTop: '-10%',
-        marginLeft: '20%'
-    },
-    star3: {
-        position: 'absolute',
-        marginTop: '-5%',
-        marginLeft: '-20%'
-    },
-    star4: {
-        position: 'absolute',
-        marginTop: '-3%',
-        marginLeft: '32%'
-    },
-    star5: {
-        position: 'absolute',
-        marginLeft: '40%'
+        marginTop: height * 0.1,
     },
     videoContainer: {
-        width: '90%', // O vídeo ocupa 90% da largura da tela
-        height: 500, // Altura ajustada para um tamanho maior
-        borderRadius: 15, // Borda arredondada para suavizar o container
-        overflow: 'hidden', // Garante que o vídeo não ultrapasse as bordas
-        alignItems: 'center', // Centraliza o conteúdo no eixo horizontal
-        justifyContent: 'center', // Centraliza no eixo vertical
-        marginVertical: 20, // Adiciona margem para separar dos elementos acima e abaixo
-        marginTop: '20%'
+        width: width * 0.9,
+        height: height * 0.75,
+        borderRadius: 15,
+        overflow: 'hidden',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: height * 0.05,
+        marginLeft: width * 0.05
     },
     video: {
-        width: '100%', // O vídeo ocupa toda a largura do container
-        height: '100%', // O vídeo ocupa toda a altura do container
+        width: '95%',
+        height: '100%',
     },
-    
 });
 
 export default styles;

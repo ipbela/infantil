@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, ImageBackground, Image } from "react-native";
+import { View, Text, Pressable, ImageBackground, Image, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from 'expo-linear-gradient';
 import styles from './styles';
@@ -19,35 +19,48 @@ export default function Cantigas() {
                 colors={['#7AC0E4', '#FDAFC9']}
                 style={styles.gradientBackground}
             >
-                <ImageBackground source={bg} style={styles.imageBackground} />
+                <ImageBackground source={bg} style={styles.imageBackground}>
+                    <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+                        <Pressable
+                            style={styles.div_top}
+                            onPress={() => navigation.navigate("Inicial")}
+                        >
+                            <Image source={back} style={styles.iconBack} />
+                        </Pressable>
 
-                <View style={styles.div_top}>
-                    <Pressable style={styles.back} onPress={() => navigation.navigate("Inicial")}>
-                        <Image source={back} />
-                    </Pressable>
-                </View>
+                        <Text style={styles.title}>Cantigas</Text>
 
-                <View style={styles.titleContainer}>
-                    <Text style={styles.title}>Cantigas</Text>
-                </View>
+                        <View style={styles.boxes}>
+                            <Pressable
+                                style={styles.box}
+                                onPress={() => navigation.navigate("Cantiga1")}
+                            >
+                                <Image source={cantiga1} style={styles.imageBox} />
+                            </Pressable>
 
-                <View style={styles.boxs}>
-                    <Pressable style={styles.box} onPress={() => navigation.navigate("Cantiga1")}>
-                        <Image source={cantiga1} style={styles.imageBox1} />
-                    </Pressable>
+                            <Pressable
+                                style={styles.box}
+                                onPress={() => navigation.navigate("Cantiga2")}
+                            >
+                                <Image source={cantiga2} style={styles.imageBox} />
+                            </Pressable>
 
-                    <Pressable style={styles.box} onPress={() => navigation.navigate("Cantiga2")}>
-                        <Image source={cantiga2} style={styles.imageBox2} />
-                    </Pressable>
+                            <Pressable
+                                style={styles.box}
+                                onPress={() => navigation.navigate("Cantiga3")}
+                            >
+                                <Image source={cantiga3} style={styles.imageBox} />
+                            </Pressable>
 
-                    <Pressable style={styles.box} onPress={() => navigation.navigate("Cantiga3")}>
-                        <Image source={cantiga3} style={styles.imageBox3} />
-                    </Pressable>
-
-                    <Pressable style={styles.box} onPress={() => navigation.navigate("Cantiga4")}>
-                        <Image source={cantiga4} style={styles.imageBox4} />
-                    </Pressable>
-                </View>
+                            <Pressable
+                                style={styles.box}
+                                onPress={() => navigation.navigate("Cantiga4")}
+                            >
+                                <Image source={cantiga4} style={styles.imageBox} />
+                            </Pressable>
+                        </View>
+                    </ScrollView>
+                </ImageBackground>
             </LinearGradient>
         </View>
     );

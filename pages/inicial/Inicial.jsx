@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, ImageBackground, Image } from "react-native";
+import { View, Text, Pressable, ImageBackground, Image, ScrollView, Dimensions, SafeAreaView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from './styles';
 import bg from '../imgs/bgHome.png';
@@ -9,34 +9,34 @@ import game from '../imgs/game.png';
 import dente from '../imgs/dente.png';
 
 export default function Inicial() {
-
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
-            <View style={styles.solidBackground}>
+        <SafeAreaView style={styles.safeArea}>
+            <ScrollView contentContainerStyle={styles.scrollContainer}>
                 <ImageBackground source={bg} style={styles.imageBackground}>
-
+                    {/* Parte branca no topo */}
                     <View style={styles.quadWhite}>
-                        <Image source={dente} style={styles.logo}></Image>
+                        <Image source={dente} style={styles.logo} />
                     </View>
 
-                    <View style={styles.opcoes} className=''>
+                    {/* Botões abaixo */}
+                    <View style={styles.opcoes}>
                         <Pressable style={styles.btn_opcao} onPress={() => navigation.navigate("Cantigas")}>
-                            <Image source={music}></Image>
+                            <Image source={music} style={styles.icon} />
                             <Text style={styles.btn_text}>Cantigas</Text>
                         </Pressable>
                         <Pressable style={styles.btn_opcao} onPress={() => navigation.navigate("Historias")}>
-                            <Image source={history}></Image>
+                            <Image source={history} style={styles.icon} />
                             <Text style={styles.btn_text}>Histórias</Text>
                         </Pressable>
                         <Pressable style={styles.btn_opcao} onPress={() => navigation.navigate("Jogo")}>
-                            <Image source={game}></Image>
+                            <Image source={game} style={styles.icon} />
                             <Text style={styles.btn_text}>Jogo</Text>
                         </Pressable>
                     </View>
                 </ImageBackground>
-            </View>
-        </View>
+            </ScrollView>
+        </SafeAreaView>
     );
 }

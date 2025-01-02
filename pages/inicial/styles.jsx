@@ -1,81 +1,73 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
+    safeArea: {
+        flex: 1,
+        backgroundColor: '#7AC0E4',
+    },
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },    
-    solidBackground: {
-        flex: 1,
-        width: '100%',
-        height: '100%',
         backgroundColor: '#7AC0E4',
-        justifyContent: 'center',
-        alignItems: 'center',
+    },
+    scrollContainer: {
+        flexGrow: 1,
     },
     imageBackground: {
         flex: 1,
+        resizeMode: 'cover',
+        alignItems: 'center',
         width: '100%',
         height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        resizeMode: 'cover',
     },
-    texto_menu: {
-        fontSize: 32,
-        fontWeight: 'bold',
-        color: '#FFFFFF',
-        marginBottom: 20,
+    quadWhite: {
+        width: width,
+        height: height * 0.4,
+        backgroundColor: "#FFF",
+        borderBottomLeftRadius: width * 0.5,
+        borderBottomRightRadius: width * 0.5,
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute',
+        top: 0,
+    },
+    logo: {
+        width: '40%', // Ajustado para dispositivos maiores
+        height: '40%',
+        resizeMode: 'contain',
     },
     opcoes: {
-        width: '80%',
+        marginTop: height * 0.5, // Garantir espaço adequado para telas maiores
+        width: '85%',
         alignItems: 'center',
-        marginTop: '20%',
     },
     btn_opcao: {
         width: '100%',
-        height: 90,
+        height: height * 0.1, // Reduzido para não ocupar muito espaço
         padding: 15,
         backgroundColor: '#FFFF00',
-        borderRadius: 100,
+        borderRadius: 50,
         alignItems: 'center',
-        marginBottom: 50,
-        flexDirection: 'row', 
+        marginBottom: height * 0.02, // Reduzido o espaçamento entre os botões
+        flexDirection: 'row',
         justifyContent: 'center',
-        // Shadow for iOS
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 10},
+        shadowOffset: { width: 0, height: 5 },
         shadowOpacity: 0.3,
-        shadowRadius: 10,
-        // Shadow for Android
-        elevation: 10,
+        shadowRadius: 5,
+        elevation: 5,
     },
     btn_text: {
         color: '#000',
-        fontSize: 48,
+        fontSize: width * 0.06, // Ajuste para telas maiores
         fontFamily: "Chicle",
-        marginLeft: 20, 
+        marginLeft: width * 0.02,
     },
     icon: {
-        width: 30, 
-        height: 30,  
-        resizeMode: 'contain', 
-    },
-    quadWhite: {
-        width: '100%',
-        height: "40%",
-        marginTop: "-20%",
-        backgroundColor: "#FFF",
-        borderBottomLeftRadius: 200,
-        borderBottomRightRadius: 200,
-    },
-    logo: {
-        marginLeft: '16%',
-        marginTop: '20%',
-        width: '70%', 
-        height: '70%', 
-        resizeMode: 'contain', 
+        width: width * 0.08, // Proporcional à tela
+        height: width * 0.08,
+        resizeMode: 'contain',
     }
 });
 

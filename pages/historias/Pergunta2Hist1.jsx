@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import bg from '../imgs/bgHome.png';
 import back from '../imgs/return.png';
 import sim from '../imgs/SIM.png';
-import nao from '../imgs/NÃO.png';
+import nao from '../imgs/NAO.png';
 import styles from './stylesHist';
 
 export default function Pergunta2Hist1() {
